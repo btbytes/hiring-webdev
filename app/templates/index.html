@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+<div class="container px-4 max-w-full">
+    <h1 class="text-2xl mt-3 mb-3">Admin Dashboard</h1>
+    <div class="columns-4 mb-4" id="cards">
+        <div hx-get="/data/cards/dashboards" hx-trigger="load"></div>
+        <div hx-get="/data/cards/users" hx-trigger="load"></div>
+        <div hx-get="/data/cards/orgs" hx-trigger="load"></div>
+        <div hx-get="/data/cards/logins" hx-trigger="load"></div>
+    </div><!-- #cards .columns-4 -->
+    <div class="columns-2">
+        <div id="recent-logins" class="overflow-y-auto border-solid border-2 rounded bg-white">
+            <h3 class="text-lg mt-4 mb-2 inline-flex items-center pl-2"> 
+                <svg width="17" height="16" viewBox="0 0 17 16"
+                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10.5 1H14.5L16 3V13L14.5 15H10.5M0 8H10M10 8L5.5 13M10 8L5.5 3" stroke="black" />
+                </svg>
+                <span class="ml-2">Recent Logins</span>
+            </h3>
+            <table class="table table-sm">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Organization</th>
+                        <th>Timestamp</th>
+                    </tr>
+                </thead>
+                <tbody hx-get="/data/logins" hx-trigger="load" hx-swap="beforeend"></tbody>
+            </table>
+        </div><!-- recent-logins -->
+        <div id="recent-dashboard-views" class="overflow-y-auto border-solid border-2 rounded bg-white">
+            <h3 class="text-lg mt-4 mb-2 inline-flex items-center pl-2">
+                <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M10.4999 0.125C7.55411 0.125 5.19526 1.41875 3.47807 2.95859C1.77182 4.48438 0.630672 6.3125 0.0910889 7.56758C-0.0292236 7.84531 -0.0292236 8.15469 0.0910889 8.43242C0.630672 9.6875 1.77182 11.5156 3.47807 13.0414C5.19526 14.5813 7.55411 15.875 10.4999 15.875C13.4458 15.875 15.8046 14.5813 17.5218 13.0414C19.2281 11.5121 20.3692 9.6875 20.9124 8.43242C21.0328 8.15469 21.0328 7.84531 20.9124 7.56758C20.3692 6.3125 19.2281 4.48438 17.5218 2.95859C15.8046 1.41875 13.4458 0.125 10.4999 0.125ZM5.24994 8C5.24994 6.65734 5.80307 5.36967 6.78763 4.42027C7.7722 3.47087 9.10756 2.9375 10.4999 2.9375C11.8923 2.9375 13.2277 3.47087 14.2123 4.42027C15.1968 5.36967 15.7499 6.65734 15.7499 8C15.7499 9.34266 15.1968 10.6303 14.2123 11.5797C13.2277 12.5291 11.8923 13.0625 10.4999 13.0625C9.10756 13.0625 7.7722 12.5291 6.78763 11.5797C5.80307 10.6303 5.24994 9.34266 5.24994 8ZM10.4999 5.75C10.4999 6.99102 9.45359 8 8.16661 8C7.90776 8 7.65984 7.95781 7.42651 7.88398C7.22599 7.8207 6.99265 7.94023 6.99994 8.14414C7.01088 8.38672 7.04734 8.6293 7.11661 8.87187C7.61609 10.6719 9.53744 11.7406 11.4041 11.259C13.2708 10.7773 14.3791 8.92461 13.8796 7.12461C13.4749 5.66563 12.1369 4.68477 10.6494 4.625C10.438 4.61797 10.314 4.83945 10.3796 5.03633C10.4562 5.26133 10.4999 5.50039 10.4999 5.75Z"
+                        fill="black" />
+                </svg>
+                <span class="ml-2">Recent Dashboard Views</span>
+            </h3>
+            <table class="table table-sm">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Organization</th>
+                        <th>Dashboard</th>
+                        <th>Timestamp</th>
+                    </tr>
+                </thead>
+                <tbody hx-get="/data/views" hx-trigger="load" hx-swap="beforeend"></tbody>
+            </table>
+        </div><!-- recent-dashboard-views -->
+    </div><!-- columns-2 -->
+</div>
+{% endblock content %}

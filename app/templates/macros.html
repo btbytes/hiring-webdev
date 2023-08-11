@@ -1,0 +1,15 @@
+{% macro htmx_infinite_table_rows(paginate, endpoint) -%}
+  {% for item in paginate.items -%}
+    {% if loop.last and paginate.has_next -%}
+    <tr
+      hx-get="{{ url_for(endpoint, page=paginate.next_num) }}"
+      hx-trigger="revealed"
+      hx-swap="afterend"
+    >
+    {% else -%}
+    <tr>
+    {% endif -%}
+      {{ caller(item) }}
+    </tr>
+  {% endfor -%}
+{% endmacro -%}

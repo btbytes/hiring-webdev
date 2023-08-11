@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="corporate">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>  
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/htmx.org@1.9.4"></script>
+  <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" type="text/css" />
+  <title>{% block title %}{{ title }}{% endblock title %}</title>
+</head>
+
+<body class=" bg-slate-100">
+{% block navbar %} 
+<div class="navbar" id="topnav">
+    <div class="navbar-start">
+        <ul class="menu menu-horizontal px-1">
+            <li><a class="text-white">Admin Home</a></li>
+            <li><a class="text-white">Return To Portal</a></li>
+            <li><a class="text-white">Logout</a></li>
+          </ul>      
+    </div>
+    <div class="navbar-left hidden lg:flex">
+    </div>
+  </div>
+
+{% endblock navbar %}
+
+
+{% block content %}
+{% endblock content %}
+</body>
+</html>

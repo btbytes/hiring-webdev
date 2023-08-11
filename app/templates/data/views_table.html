@@ -1,0 +1,7 @@
+{% from "macros.html" import htmx_infinite_table_rows with context %}
+{% call(record) htmx_infinite_table_rows(records, endpoint) -%}
+    <td class=""><a href="#" class="text-blue-500">{{ record.fname[:8] }} {{record.lname[:8]}}</a></td>
+    <td>{{record.organization[:10]}}</td>
+    <td>{{record.dashboard[:20]}}</td>
+    <td>{{record.timestamp|timeago}}</td>
+{% endcall -%}
