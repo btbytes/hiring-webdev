@@ -1,5 +1,11 @@
 # Open Architects
 
+## Solution Notes
+
+- uses [htmx](//htmx.org/) for dynamically showing data.
+- uses tailwind, specifially [daisyui](https://daisyui.com/) for styling application components.
+- see `templates/data` directory for HTMX components. uses Jinja2 macros etc.
+
 ## Finished App screenshot
 
 ![](open-webdev.webp)
