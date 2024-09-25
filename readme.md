@@ -1,4 +1,9 @@
 # Open Architects
+
+## Finished App screenshot
+
+![](open-webdev.webp)
+
 ### Full Stack Python Web Developer Hiring Assigment
 
 This hiring assignment is designed to evaluate your full-stack web development skills and experience, focusing on how they directly correspond to our environment, tech stack, and the day-to-day work we perform. This repository contains a starter Flask project paired with an attached SQLite database. We've already connected the Flask project to the SQL database and constructed the ORM. Additionally, you will find a link below to a Figma project showcasing a version of our admin homepage. This modified and condensed rendition of the admin homepage functions as the landing page for both OA staff and select school district leaders, offering valuable insights and statistics.
